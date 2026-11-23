@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Universe Cinema – Hệ thống quản lý rạp chiếu phim
 
 **BA Portfolio** · Dự án học phần *Phát triển ứng dụng* · Trường Đại học Công nghiệp TP. Hồ Chí Minh (IUH) · 08/2024
