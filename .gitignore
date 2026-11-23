@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Office temp/lock files
+~$*
+*.tmp
+
+# Source documents (contain team members' personal information - do not publish)
+*.docx
+*.doc
+source_documents/
+
+# Diagram build output
+*.svg.tmp

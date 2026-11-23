@@ -1,0 +1,62 @@
+@startuml use_case_diagram_redrawn
+' Render: java -jar plantuml.jar -Playout=smetana use_case_diagram.puml
+' Bản vẽ lại từ ảnh Use Case Diagram gốc (SRS mục B.I; Đặc tả mục IV).
+' Giữ nguyên actor, use case và quan hệ như ảnh gốc; chỉ bổ sung dấu tiếng Việt cho tên.
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #EAF4FB
+  BorderColor #2F6F9F
+}
+
+actor "Nhân viên" as NV
+actor "Quản trị viên" as QTV
+
+rectangle "WEBSITE ĐẶT VÉ XEM PHIM ONLINE\n(tên ranh giới hệ thống theo ảnh gốc)" {
+  usecase "Tìm kiếm phim" as UC_TK
+  usecase "Tìm theo tên phim" as UC_TK1
+  usecase "Tìm theo thời gian chiếu" as UC_TK2
+  usecase "Tìm theo thể loại" as UC_TK3
+  usecase "Xem lịch chiếu" as UC_LC
+  usecase "Bán vé xem phim" as UC_BV
+  usecase "Đăng nhập hệ thống" as UC_DN
+  usecase "Thống kê doanh thu" as UC_TKDT
+  usecase "Quản lí phim" as UC_QLP
+  usecase "Quản lí rạp chiếu phim" as UC_QLR
+  usecase "Quản lí phòng chiếu" as UC_QLPC
+  usecase "Quản lí lịch chiếu" as UC_QLLC
+  usecase "Quản lí người dùng" as UC_QLND
+  usecase "Quản lí suất chiếu" as UC_QLSC
+}
+
+NV -- UC_TK
+NV -- UC_LC
+NV -- UC_BV
+
+UC_TK1 --|> UC_TK
+UC_TK2 --|> UC_TK
+UC_TK3 --|> UC_TK
+
+UC_TK1 ..> UC_DN : <<include>>
+UC_TK2 ..> UC_DN : <<include>>
+UC_TK3 ..> UC_DN : <<include>>
+UC_LC ..> UC_DN : <<include>>
+UC_BV ..> UC_DN : <<include>>
+
+UC_TKDT -- QTV
+UC_QLP -- QTV
+UC_QLR -- QTV
+UC_QLPC -- QTV
+UC_QLLC -- QTV
+UC_QLND -- QTV
+UC_QLSC -- QTV
+
+UC_TKDT ..> UC_DN : <<include>>
+UC_QLP ..> UC_DN : <<include>>
+UC_QLR ..> UC_DN : <<include>>
+UC_QLPC ..> UC_DN : <<include>>
+UC_QLLC ..> UC_DN : <<include>>
+UC_QLND ..> UC_DN : <<include>>
+UC_QLSC ..> UC_DN : <<include>>
+@enduml
